@@ -1,6 +1,9 @@
 import csv
 import kdtree
 import os
+import sys
+
+
 
 
 class City:
@@ -13,13 +16,15 @@ class City:
         self.country_code = country_code
 
 
+
 # load the city data up
 _current_dir, _current_filename = os.path.split(__file__)
-_world_cities_csv_path = os.path.join(_current_dir, 'World Weather/Resources/worldcities.csv')
+_world_cities_csv_path = os.path.join(_current_dir, 'worldcities.csv')
 _world_cities_kdtree = kdtree.create(dimensions=2)
 WORLD_CITIES_DICT = {}
 
-with open(_world_cities_csv_path, 'r') as csv_file:
+# with open('World_Weather/Resources/worldcities.csv', 'r') as csv_file:
+with open('/Users/zacharyevans/Documents/Data Analytics/Module 6/World_Weather_Analysis/World_Weather/Resources/worldcities.csv', 'r') as csv_file:
     cities = csv.reader(csv_file)
 
     # discard the headers
